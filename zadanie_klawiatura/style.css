@@ -1,0 +1,128 @@
+/* OGÓLNE */
+:root{
+  --bg:#eee;
+  --page-bg:#fff;
+  --dark:#3b3131;
+  --muted:#f6f6f6;
+  --accent:#ffffff;
+  --text:#222;
+  --btn-shadow: rgba(0,0,0,0.12);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* kontener strony */
+.page{
+  width:1100px;
+  margin:18px auto;
+  background:var(--page-bg);
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  min-height:100vh;
+}
+
+/* mały tekst w lewym górnym rogu headera */
+.site-header{ position:relative; padding:8px 16px 0 16px; }
+.header-top{
+  font-size:13px;
+  color:#666;
+  margin-bottom:6px;
+}
+
+/* banner: obraz + wielki tytuł na środku */
+.banner-wrap{ position:relative; overflow:hidden; }
+.banner-img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+  filter: contrast(1.02) saturate(0.95);
+}
+.banner-title{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  color:#fff;
+  font-size:48px;
+  font-weight:700;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.55);
+  letter-spacing:0.5px;
+  pointer-events:none;
+}
+
+/* nawigacja — ciemny pasek z zaokrąglonymi białymi przyciskami */
+.main-nav{
+  background:var(--dark);
+  padding:12px 0;
+  text-align:center;
+}
+.nav-btn{
+  display:inline-block;
+  text-decoration:none;
+  background:var(--accent);
+  color:#111;
+  padding:8px 22px;
+  margin:0 14px;
+  border-radius:22px;
+  font-weight:700;
+  box-shadow:0 3px 0 var(--btn-shadow);
+  border:1px solid rgba(0,0,0,0.07);
+  transition:transform .12s ease;
+}
+.nav-btn:hover{ transform:translateY(-3px); }
+
+/* GŁÓWNA ZAWARTOŚĆ */
+.container{ padding:20px 40px 30px 40px; }
+
+/* Sekcje */
+h2{ margin:6px 0 14px 0; font-size:20px; }
+
+/* tabela kursów — tak jak na obrazku: szeroka, z obramowaniem */
+.kursy{
+  width:70%;
+  border-collapse:collapse;
+  border:1px solid #999;
+  margin-bottom:26px;
+  font-size:15px;
+}
+.kursy th, .kursy td{
+  border:1px solid #999;
+  padding:10px 14px;
+  text-align:center;
+}
+.kursy th{ background:#f2f2f2; font-weight:700; }
+
+/* sekcja kontaktowa (jasne tło) */
+.contact{
+  background:var(--muted);
+  padding:12px 16px;
+  border-top:1px solid #e0e0e0;
+  width:100%;
+  margin-top:6px;
+}
+.contact ul{ margin:6px 0 0 18px; padding:0; }
+.contact a{ color:#1a6fb3; text-decoration:underline; }
+
+/* stopka */
+.site-footer{
+  background:var(--dark);
+  color:#ddd;
+  text-align:center;
+  padding:14px 10px;
+  margin-top:28px;
+  font-size:14px;
+}
+
+/* mobile-friendly fallback (jeśli otworzysz na małym ekranie) */
+@media (max-width:1160px){
+  .page{ width:95%; }
+  .kursy{ width:100%; }
+  .banner-title{ font-size:36px; }
+}
+
